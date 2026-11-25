@@ -1,12 +1,12 @@
 ---
 name: cross-verify
-description: Use for any task that relies on outside information - picking or combining open-source repos/skills/plugins/MCPs, designing an architecture, or trusting a claim. Opens every cited source, checks academic indexes and security databases, scores credibility, recommends; if nothing existing fits, recommends building a new project.
+description: Use automatically in any task before giving a recommendation - cross-verify the information behind it (claims, sources, open-source repos/skills/plugins/MCPs, architectures). Opens every cited source, checks academic indexes and security databases, scores credibility. For project-combination or architecture tasks with no good fit, recommends building a new project.
 license: MIT
 ---
 
 # cross-verify
 
-Turn leads (chatbot answers, READMEs, blog posts) into verified evidence, then score and recommend. Applies to every task that depends on outside information, not only installs. You recommend; the human decides. You never install anything in this skill.
+Turn leads (chatbot answers, READMEs, blog posts) into verified evidence, then score and recommend. Applies to every task: verify the information first, then recommend. You recommend; the human decides. You never install anything in this skill.
 
 ## Modes
 - **install** — vetting a repo, package, skill, plugin, or MCP server → score with `references/rubric.md`.
@@ -34,7 +34,7 @@ Default location: `$CROSS_VERIFY_DIR` if set, else `~/research/` (keep it outsid
    - alternatives
    - what was unreachable
 
-## No fit → recommend building new
+## No fit → recommend building new (project-combination and architecture tasks only)
 If no existing project passes the rubric, or no combination of passing projects covers the need, say so and recommend that the user develop a new project. Give a short rationale:
 - the gap: which requirement nothing covers
 - why the candidates failed: their scores or hard fails
