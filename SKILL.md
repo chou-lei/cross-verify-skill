@@ -1,12 +1,12 @@
 ---
 name: cross-verify
-description: Cross-verify claims before installing an open-source repo/skill/plugin/MCP, finalizing an architecture, or trusting a factual claim. Opens every cited source, checks academic indexes and security databases, scores credibility, recommends.
+description: Use for any task that relies on outside information - picking or combining open-source repos/skills/plugins/MCPs, designing an architecture, or trusting a claim. Opens every cited source, checks academic indexes and security databases, scores credibility, recommends; if nothing existing fits, recommends building a new project.
 license: MIT
 ---
 
 # cross-verify
 
-Turn leads (chatbot answers, READMEs, blog posts) into verified evidence, then score and recommend. You recommend; the human decides. You never install anything in this skill.
+Turn leads (chatbot answers, READMEs, blog posts) into verified evidence, then score and recommend. Applies to every task that depends on outside information, not only installs. You recommend; the human decides. You never install anything in this skill.
 
 ## Modes
 - **install** — vetting a repo, package, skill, plugin, or MCP server → score with `references/rubric.md`.
@@ -33,6 +33,14 @@ Default location: `$CROSS_VERIFY_DIR` if set, else `~/research/` (keep it outsid
    - risks
    - alternatives
    - what was unreachable
+
+## No fit → recommend building new
+If no existing project passes the rubric, or no combination of passing projects covers the need, say so and recommend that the user develop a new project. Give a short rationale:
+- the gap: which requirement nothing covers
+- why the candidates failed: their scores or hard fails
+- what to reuse: passing parts worth building on
+
+Keep it a recommendation, not a design. Do not start building unless asked.
 
 ## Rules
 - Chatbot answers and their citations are leads only. Something counts as evidence only when you opened a primary source or academic index and it actually says that.

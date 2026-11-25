@@ -4,7 +4,7 @@
 
 ## 繁體中文
 
-讓 Claude Code 在**安裝開源專案、技能、外掛、MCP 之前**，以及**設計架構**或**採信某個說法**之前，先把資訊查清楚。
+讓 Claude Code 在**所有需要外部資訊的任務**中先把資訊查清楚，例如挑選或組合開源專案、技能、外掛、MCP，設計架構，或採信某個說法。如果沒有任何現成專案合適，它會建議你自己開發一個新專案，並說明缺了什麼、現有專案為什麼不合格。
 
 AI 聊天工具給的答案和引用只算「線索」。這個技能會要求 Claude Code 逐一打開每個引用來源，確認原文真的這樣寫，再到學術索引（Semantic Scholar、OpenAlex、arXiv）和軟體安全資料庫（deps.dev、OSV）找獨立的佐證，最後照固定的評分表打分並給出建議。是否安裝，最後由你決定。
 
@@ -45,7 +45,7 @@ cp -r <repo> ~/.claude/skills/cross-verify   # 或只複製 SKILL.md 和 referen
 
 ## English
 
-A Claude Code skill that verifies information **before you install** an open-source repo, skill, plugin, or MCP server, **review an architecture**, or **trust a claim**.
+A Claude Code skill that verifies information for **any task that relies on outside information**: picking or combining open-source repos, skills, plugins, or MCP servers, designing an architecture, or trusting a claim. If nothing existing fits, it recommends building a new project and explains the gap and why the existing options failed.
 
 Chatbot answers and their citations are treated as leads only. The skill makes Claude Code open every cited source and confirm it says what was claimed. It then looks for independent agreement in academic indexes (Semantic Scholar, OpenAlex, arXiv) and software security databases (deps.dev, OSV), scores the result with a fixed rubric, and recommends. You make the final call.
 
