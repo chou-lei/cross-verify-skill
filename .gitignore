@@ -1,0 +1,6 @@
+.DS_Store
+*.swp
+# evidence files and fetched pages are personal; keep them out of the repo
+research/
+raw/
+.playwright-cli/
